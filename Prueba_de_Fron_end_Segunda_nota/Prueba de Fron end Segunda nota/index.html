@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes - Patagonia Chilena</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.destination-carousel').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+
+            $('.testimonials-carousel').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+
+            $('.discount-banner').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: false,
+                dots: false,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.icons');
+                const logo = document.querySelector('.logo img');
+                const heroSectionHeight = document.querySelector('.Somos').offsetHeight;
+
+                if (window.scrollY > heroSectionHeight) {
+                    header.style.backgroundColor = '#083456';
+                    header.style.color = 'black';
+                    logo.style.width = '70px';
+                    logo.style.margin='center';
+                    logo.style.boxShadow = '0 4px 8px rgba(50, 152, 219, 0.5)'; // Ajuste de sombra de caja para el logo pequeño
+                } else {
+                    header.style.backgroundColor = 'transparent';
+                    header.style.color = 'white';
+                    logo.style.width = '120px'; // Tamaño original del logo
+                    logo.style.boxShadow = '0 4px 8px rgb(50, 152, 219)'; // Ajuste de sombra de caja para el logo grande
+                }
+            });
+        });         
+
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
+</head>
+<body>
+    <header class="icons">
+        <div class="discount-banner">
+            <div class="discount-slide">¡Oferta Especial! Reserva ahora y obtén un 20% de descuento en nuestros paquetes turísticos</div>
+            <div class="discount-slide">¡Última Oportunidad! Descuentos increíbles para las primeras 50 reservas</div>
+            <div class="discount-slide">¡Aprovecha! Descuento del 20% en todos nuestros tours personalizados</div>
+        </div>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/letters_only.png" alt="Logo Patagonia" class="logo">
+            </a>
+            <div class="menu-icon">
+                <a href="javascript:void(0);" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#Somos">Sobre Nosotros</a></li>
+                    <li><a href="#destination">Destinos</a></li>
+                    <li><a href="#testimonials">Testimonios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container-body">
+        <section class="hero">
+            <div class="container">
+                <h1>Descubre la Magia de la Patagonia Chilena</h1>
+                <p>Viajes personalizados para explorar uno de los destinos más bellos del mundo</p>
+                <a href="#contact" class="cta-button">Reserva Ahora</a>
+            </div>
+        </section>
+
+        <section id="Somos" class="Somos">
+            <div class="container">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p class="description"> Con más de 10 años de experiencia, en Coyhaique Journey nos especializamos en ofrecer tours exclusivos para explorar los impresionantes alrededores de Coyhaique. Nuestros guías expertos, apasionados por la naturaleza y la aventura, le mostrarán los paisajes más hermosos, desde glaciares majestuosos hasta exuberantes bosques milenarios.
+
+                    Estamos comprometidos con la calidad y la satisfacción de nuestros clientes, garantizando experiencias únicas y personalizadas para cada viajero. Ya sea que busque una escapada tranquila en la naturaleza o una aventura llena de adrenalina, tenemos el tour perfecto para usted.
+                    
+                    ¡Acompáñenos en una aventura inolvidable y descubra Coyhaique como nunca antes lo ha hecho! Con Coyhaique Journey, cada viaje es una historia por contar</p>
+            </div>
+        </section>    
+
+        <section id="servicios" class="servicios">
+            <div class="container">
+                <h2>Nuestros Servicios</h2>
+                <div class="services">
+                    <div class="service-item">
+                        <h3>Paquetes de Viaje</h3>
+                        <p>Descubre nuestros paquetes especiales diseñados para diferentes tipos de viajeros.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Tours Personalizados</h3>
+                        <p>Personaliza tu experiencia de viaje según tus preferencias y necesidades.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Actividades</h3>
+                        <p>Explora una variedad de actividades como trekking, navegación, y avistamiento de fauna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="destinations" id="destination">
+            <div class="container">
+                <h2>Destinos Populares</h2>
+                <div class="destination-carousel">
+                    <div class="destination-item">
+                        <img src="img/lago-carrera-141.jpg" alt="Capillas de Mármol">
+                        <h3>Catedrales de Mármol</h3>
+                        <p>Impresionantes cuevas naturales formadas por la naturaleza.</p>
+                    </div>
+                    <div class="destination-item">
+                        <img src="img/parque nacional.jpg" alt="Glaciar Grey">
+                        <h3>Reserva Nascional Coyhaique</h3>
+                        <p>Un impresionante parque donde, en la cima, se encuentran dos grandes lagunas..</p>
+                    </div>
+                    <div class="destination-item">
+                        <img src="img/lago general.jpg" alt="Lago General Carrera">
+                        <h3>Lago General Carrera</h3>
+                        <p>Un lago de aguas turquesas compartido con Argentina.</p>
+                    </div>
+                    <div class="destination-item">
+                        <img src="img/PN-Queulat-Cascada-del-glaciar-colgante-1.jpg" alt="Torres del Paine">
+                        <h3>Parque Nacional Queulat</h3>
+                        <p>Majestuoso Glaciar entre las montañas y bosques.</p>
+                    </div>
+                    <div class="destination-item">
+                        <img src="img/Torres del paine.jpg" alt="Torres del Paine">
+                        <h3>Parque Nacional Queulat</h3>
+                        <p>Las Torres del Paine en Chile ofrecen majestuosas montañas, glaciares y lagos turquesas, perfectos para los amantes de la naturaleza. ¡Descubre la belleza indómita de la Patagonia!.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>Testimonios</h2>
+                <div class="testimonials-carousel">
+                    <div class="testimonial-item">
+                        <div class="quote-icon">
+                            <i class="fa fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"Un viaje inolvidable, la organización fue perfecta y los paisajes, simplemente maravillosos."</p>
+                            <p>- Juan Pérez</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="quote-icon">
+                            <i class="fa fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"La mejor experiencia de mi vida, gracias a la agencia por hacerlo posible."</p>
+                            <p>- María Gómez</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="quote-icon">
+                            <i class="fa fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"La mejor experiencia de mi vida, gracias a la agencia por hacerlo posible."</p>
+                            <p>- Tomás Sánchez</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <form action="submit_form.php" method="POST">
+                    <label for="name">
+                        <i class="fa fa-user"></i> Nombre:
+                    </label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">
+                        <i class="fa fa-envelope"></i> Correo Electrónico:
+                    </label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">
+                        <i class="fa fa-pencil"></i> Mensaje:
+                    </label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit" class="cta-button" aria-label="Enviar formulario de contacto">Enviar</button>
+                </form>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-container">
+                <div class="social-media">
+                    <p>Síguenos en:</p>
+                    <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=937558179&text&type=phone_number&app_absent=0" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-home"></i>José Miguel Carrra, #1695, Coyhaique.</p>
+                    <p><i class="fas fa-phone"></i>+569 3755 8179</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Todos los derechos reservados.</p>
+            </div>
+        </footer> 
+              
+    </div>
+</body>
+</html>
